@@ -51,24 +51,23 @@ export interface InputErrorProps {
     | "address.zipcode"
     | "firstName"
     | "middleName"
-    | "lastName"
-    | "birthDate"
-    | "gender"
-    | "phoneNumber"
-    | "email"
-    | "startAt"
-    | "endAt"
-    | "jobPosition"
-    | "teams"
-    | "designation"
-    | "billable"
-    | "billableHours";
+    | "lastName";
+  // | "birthDate"
+  // | "gender"
+  // | "phoneNumber"
+  // | "email"
+  // | "startAt"
+  // | "endAt"
+  // | "jobPosition"
+  // | "teams"
+  // | "designation"
+  // | "billable"
+  // | "billableHours";
   errors: FieldErrors<UserFormWithAddress | EmployeeFormType>;
 }
 
 export interface InputProps extends InputErrorProps {
   label: string;
-  type: "text" | "email";
+  type: "text" | "email" | "date";
   placeholder: string;
-  register: UseFormRegister<UserFormWithAddress | EmployeeFormType>;
 }

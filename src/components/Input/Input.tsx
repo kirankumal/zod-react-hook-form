@@ -1,15 +1,16 @@
 import { FC } from "react";
 import { InputProps } from "@/components/Input/types";
 import { InputErrorMessage } from "@/components/Input/InputErrorMessage";
+import { useFormContext } from "react-hook-form";
 
 export const Input: FC<InputProps> = ({
   label,
   type,
   name,
   placeholder,
-  register,
   errors,
 }) => {
+  const { register } = useFormContext();
   return (
     <div>
       <div>
