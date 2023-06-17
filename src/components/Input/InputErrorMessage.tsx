@@ -1,13 +1,13 @@
-import { ErrorMessage } from "@hookform/error-message";
 import { FC } from "react";
-import { InputErrorProps } from "./types";
+import { ErrorMessage } from "@hookform/error-message";
+import { InputErrorProps } from "@/components/Input/types";
 
 export const InputErrorMessage: FC<InputErrorProps> = ({ errors, name }) => {
   return (
     <ErrorMessage
       errors={errors}
       name={name}
-      render={({ message }) => <p className="text-red-500 py-1">{message}</p>}
+      render={({ message }) => <p className="form__error">{message}</p>}
     />
   );
 };

@@ -13,12 +13,15 @@
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.1.1",
     "react": "^18.2.0",
+    "react-datepicker": "^4.13.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
+    "react-select": "^5.7.3",
     "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
+    "@types/react-datepicker": "^4.11.2",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
@@ -28,6 +31,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "postcss": "^8.4.24",
+    "sass": "^1.63.4",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"

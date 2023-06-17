@@ -6,8 +6,7 @@ fetchUsers();
 function App() {
   return (
     <>
-      <h1 className="">Hello world</h1>
-      {/* <UserForm /> */}
+      <UserForm />
       <EmployeeForm />
     </>
   );

@@ -1,17 +1,15 @@
 import { FC } from "react";
-import { InputProps } from "@/components/Input/types";
-import { InputErrorMessage } from "@/components/Input/InputErrorMessage";
+import { InputErrorMessage } from "./InputErrorMessage";
+import { InputProps } from "./types";
 import { useFormContext } from "react-hook-form";
 
-export const Input: FC<InputProps> = ({
-  label,
-  type,
+export const NumberInput: FC<InputProps> = ({
   name,
-  placeholder,
+  label,
   errors,
+  placeholder,
 }) => {
   const { register } = useFormContext();
-
   return (
     <div>
       <div>
@@ -19,8 +17,11 @@ export const Input: FC<InputProps> = ({
           {label}
         </label>
         <input
-          type={type}
-          {...register(name)}
+          type="number"
+          min={0}
+          {...register(name, {
+            setValueAs: (v) => (v === "" ? undefined : parseInt(v, 10)),
+          })}
           placeholder={placeholder}
           className={`form__input ${
             Object.prototype.hasOwnProperty.call(errors, name) &&

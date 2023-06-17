@@ -1,32 +1,36 @@
 import { FC } from "react";
-import { InputProps } from "@/components/Input/types";
+import { SelectProps } from "@/components/Input/types";
 import { InputErrorMessage } from "@/components/Input/InputErrorMessage";
 import { useFormContext } from "react-hook-form";
 
-export const Input: FC<InputProps> = ({
-  label,
-  type,
+// Default Select Input Example
+export const SelectInput: FC<SelectProps> = ({
   name,
-  placeholder,
   errors,
+  label,
+  options,
 }) => {
   const { register } = useFormContext();
-
   return (
     <div>
       <div>
         <label htmlFor={name} className="form__label">
           {label}
         </label>
-        <input
-          type={type}
+        <select
           {...register(name)}
-          placeholder={placeholder}
           className={`form__input ${
             Object.prototype.hasOwnProperty.call(errors, name) &&
             "border-red-500"
           } `}
-        />
+        >
+          <option value="">Choose {label}</option>
+          {options.map((item, index) => (
+            <option value={item.value} key={index}>
+              {item.label}
+            </option>
+          ))}
+        </select>
       </div>
       <InputErrorMessage name={name} errors={errors} />
     </div>

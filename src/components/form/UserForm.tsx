@@ -11,7 +11,6 @@ export const UserForm = () => {
 
   const {
     handleSubmit,
-    register,
     formState: { errors },
   } = methods;
 
